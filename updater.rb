@@ -18,7 +18,7 @@ end
 update = ARGV.first == '--update'
 
 # grab config file
-config = YAML::load_file('./config.yml') rescue {}
+config = YAML::load_file(File.dirname(__FILE__) + '/config.yml') rescue {}
 
 # get api details
 point_username = config[:point_username] || ask('username:')
