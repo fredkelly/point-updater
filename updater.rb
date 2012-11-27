@@ -1,3 +1,6 @@
+require 'bundler'
+Bundler.require
+
 require 'yaml'
 require 'point'
 require 'net/http'
