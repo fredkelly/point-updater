@@ -78,7 +78,7 @@ end
 #------------------------------------------------------------
 
 # get your external ip address
-my_ip = %x(+short myip.opendns.com @resolver1.opendns.com).chomp
+my_ip = %x(dig +short myip.opendns.com @resolver1.opendns.com).chomp
 
 # set record to your ip
 target_record.data = my_ip
