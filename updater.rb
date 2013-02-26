@@ -3,7 +3,6 @@ Bundler.require
 
 require 'yaml'
 require 'point'
-require 'net/http'
 require 'highline/import'
 
 #------------------------------------------------------------
@@ -79,7 +78,7 @@ end
 #------------------------------------------------------------
 
 # get your external ip address
-my_ip = Net::HTTP.get('ip.appspot.com', '/').chomp
+my_ip = %x(+short myip.opendns.com @resolver1.opendns.com).chomp
 
 # set record to your ip
 target_record.data = my_ip
